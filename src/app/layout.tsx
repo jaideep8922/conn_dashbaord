@@ -27,7 +27,7 @@ export default function RootLayout({
       {/* Sidebar with fixed 30% width */}
 
       <div style={{ flex: '0 0 15%', maxWidth: '30%', backgroundColor: '#f4f4f4' }}>
-        {/* <Sidebar setActivePage={() => {}} /> */}
+        <Sidebar />
       </div>
 
       {/* Main content area with 70% width */}

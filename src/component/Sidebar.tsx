@@ -12,20 +12,7 @@ type SidebarProps = {
 };
 
 
-const Sidebar: React.FC<SidebarProps> = () => {
-  // const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  // // Check if the user is authenticated (example using localStorage)
-  // useEffect(() => {
-  //   const token = localStorage.getItem("auth_token"); // Can also check cookies
-  //   if (token) {
-  //     setIsAuthenticated(true);
-  //   }
-  // }, []);
-
-  // if (!isAuthenticated) {
-  //   return null; // If not authenticated, don't render the sidebar
-  // }
+const Sidebar = () => {
 
   const menuItems = [
     { id: "dashboard", label: "Dashboard", icon: Home, path: "/" },
@@ -36,13 +23,6 @@ const Sidebar: React.FC<SidebarProps> = () => {
 
   const[name, setName]= useState()
 
-  // useEffect(() => {
-  //   const data = localStorage?.getItem("user");
-  //   if (data) {
-  //     const parsedData = JSON.parse(data);
-  //     setName(parsedData.name);
-  //   }
-  // }, []);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
