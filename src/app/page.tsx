@@ -148,17 +148,7 @@ const page = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-4">
-        <div>
-          <div className="p-6">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="font-semibold mb-4">Enquiries<span className="text-2xl font-bold pl-3 text-yellow-400">{count?.data?.enquiresCount}</span></h3>
-            </div>
-            {/* Check if registeredProducts exists and is an array */}
-            <DonutChart registeredProducts={count?.data?.enquiresCount || [0, 0, 0, 0, 0]} />
-          </div>
-        </div>
-      </div>
+      
 
      
 
