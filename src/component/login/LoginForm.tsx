@@ -35,6 +35,7 @@ export default function LoginForm() {
         localStorage.setItem("user", JSON.stringify(response.data.data.user)); 
         router.replace("/product-management"); 
         toast.success("Login Successfully")
+        window.location.reload()
 
         if (response.data.data.token) {
           Cookies.set('token', response.data.data.token, { expires: 7 });
