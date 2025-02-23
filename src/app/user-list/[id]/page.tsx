@@ -1,5 +1,6 @@
 // import { ProfileSidebar } from '@/component/profile/ProfileSidebar'
 
+import { ProfileSidebar } from "@/component/profile/ProfileSidebar";
 import { PageProps } from "../../../../.next/types/app/layout";
 
 // type Props = {
@@ -23,5 +24,5 @@ import { PageProps } from "../../../../.next/types/app/layout";
 export default async function Page({ params }: PageProps) {
   const resolvedParams = await params; // Ensure params are awaited
 
-  return <div>Product ID: {resolvedParams.id}</div>;
+  return <ProfileSidebar id={resolvedParams.id} />;
 }
