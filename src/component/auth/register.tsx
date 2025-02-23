@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import axios from 'axios';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function RegisterForm() {
   const [loading, setLoading] = useState(false);
@@ -32,6 +33,8 @@ export default function RegisterForm() {
       try {
         const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/user/add-admin`, values);
         console.log("response", response?.data)
+        toast.success("Register Successfully")
+
         if(response.data.success === true){
           setTimeout(()=>{
             router.push("/login")
@@ -49,6 +52,7 @@ export default function RegisterForm() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <Toaster />
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <h2 className="text-2xl font-bold mb-4 text-center">Register</h2>
         <form onSubmit={formik.handleSubmit} className="space-y-4">

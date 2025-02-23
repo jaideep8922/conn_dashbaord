@@ -5,6 +5,7 @@ import Logo from '../../assets/logo.png';
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import Cookies from "js-cookie";
+import toast, { Toaster } from 'react-hot-toast';
 
 
 export default function LoginForm() {
@@ -33,6 +34,7 @@ export default function LoginForm() {
         localStorage.setItem("token", response.data.data.token); 
         localStorage.setItem("user", JSON.stringify(response.data.data.user)); 
         router.replace("/product-management"); 
+        toast.success("Login Successfully")
 
         if (response.data.data.token) {
           Cookies.set('token', response.data.data.token, { expires: 7 });
@@ -58,6 +60,7 @@ export default function LoginForm() {
 
   return (
     <div className="flex h-screen items-center justify-center bg-gray-100">
+      <Toaster />
       <div className="bg-white p-8 rounded-lg shadow-md w-96">
         <div className="flex justify-center mb-6">
           <Image src={Logo} alt="Company Logo" width={100} height={100} />
