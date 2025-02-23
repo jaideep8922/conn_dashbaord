@@ -294,7 +294,7 @@ export default function UsersPage() {
             <line x1="19" y1="8" x2="19" y2="14" />
             <line x1="22" y1="11" x2="16" y2="11" />
           </svg>
-          Add Users
+          Add User
         </button>
       </div>
 
