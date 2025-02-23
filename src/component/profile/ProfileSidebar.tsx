@@ -145,8 +145,8 @@ export const ProfileSidebar: React.FC<Props> = ({ id }) => {
                                         <button className="text-blue-600 text-sm mt-2"
                                             // onClick={() => window.location.href = '/product-details'}
 
-                                            onClick={() => handleRedirect(stat.title)}
-                                        >View all →</button>
+                                            // onClick={() => handleRedirect(stat.title)}
+                                        >View</button>
                                     </div>
                                 ))}
                             </div>
