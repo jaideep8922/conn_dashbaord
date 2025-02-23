@@ -36,6 +36,8 @@ export default function LoginForm() {
         if (response.data.data.token) {
           Cookies.set('token', response.data.data.token, { expires: 7 });
         }
+        router.push("/"); 
+
         setTimeout(()=>{
           router.push("/"); 
 
