@@ -32,16 +32,16 @@ export default function LoginForm() {
         // Save token and user data in localStorage
         localStorage.setItem("token", response.data.data.token); 
         localStorage.setItem("user", JSON.stringify(response.data.data.user)); 
-       
+        router.push("/"); 
+
         if (response.data.data.token) {
           Cookies.set('token', response.data.data.token, { expires: 7 });
         }
-        router.push("/"); 
 
-        setTimeout(()=>{
-          router.push("/"); 
+        // setTimeout(()=>{
+        //   router.push("/"); 
 
-        }, 3000)
+        // }, 3000)
       } else {
         setError("Login failed. Please check your credentials.");
       }
