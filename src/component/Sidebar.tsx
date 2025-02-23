@@ -7,6 +7,7 @@ import File from "../assets/profile_user.jpg";
 import Logo from "../assets/logo.png";
 import { useState, useEffect } from "react";
 import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 
 type SidebarProps = {
   setActivePage: React.Dispatch<React.SetStateAction<string>>;
@@ -14,6 +15,8 @@ type SidebarProps = {
 
 
 const Sidebar = () => {
+
+  const router = useRouter()
 
   const menuItems = [
     { id: "dashboard", label: "Dashboard", icon: Home, path: "/" },
@@ -37,6 +40,7 @@ const Sidebar = () => {
 
   const handleLogout = ()=>{
     Cookies.remove("token")
+    router.push('/login')
   }
 
   return (
