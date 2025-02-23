@@ -418,7 +418,18 @@ const NotificationComponent = () => {
               <div className="flex-1 min-w-0">
                 <p className="text-gray-600 truncate">{notification.message}</p>
               </div>
-              <div className="text-sm text-gray-500">{notification.createdAt}</div>
+              <div className="text-sm text-gray-500">
+  {new Date(notification.createdAt).toLocaleString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: true,
+  })}
+</div>
+
+              {/* <div className="text-sm text-gray-500">{notification.createdAt}</div> */}
             </div>
           ))
         ) : (
