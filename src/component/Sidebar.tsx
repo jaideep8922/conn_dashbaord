@@ -6,6 +6,7 @@ import { Home, Users, BarChart3, Bell, LogOut } from "lucide-react";
 import File from "../assets/profile_user.jpg";
 import Logo from "../assets/logo.png";
 import { useState, useEffect } from "react";
+import Cookies from "js-cookie";
 
 type SidebarProps = {
   setActivePage: React.Dispatch<React.SetStateAction<string>>;
@@ -33,6 +34,10 @@ const Sidebar = () => {
       }
     }
   }, []);
+
+  const handleLogout = ()=>{
+    Cookies.remove("token")
+  }
 
   return (
     <div className="w-64 fixed top-0 left-0 h-full bg-white shadow-md flex flex-col">
@@ -84,7 +89,7 @@ const Sidebar = () => {
             </div>
           </div>
           <button className="p-2 hover:bg-gray-100 rounded-full">
-            <LogOut className="h-5 w-5 text-gray-500" />
+            <LogOut className="h-5 w-5 text-gray-500" onClick={handleLogout}/>
           </button>
         </div>
       </div>
