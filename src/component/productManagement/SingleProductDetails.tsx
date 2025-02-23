@@ -67,9 +67,10 @@ export const ProductDetail: React.FC<Props> = ({ id }) => {
                     <div>
                         <div className="relative aspect-square mb-4">
                             <img
-                                src={product?.productImage}
+                                src={product?.productImage }
                                 alt={"pic"}
-
+width={500}
+height={"auto"}
                                 className="rounded-lg object-cover"
                             />
                         </div>
@@ -116,7 +117,7 @@ export const ProductDetail: React.FC<Props> = ({ id }) => {
                         <div className="border-t pt-6">
                             <h2 className="font-semibold mb-4">Seller Details</h2>
                             <div className="flex items-center gap-4">
-                                <Image
+                                <img
                                     src={product?.seller.filePath}
                                     alt={seller.name}
                                     width={50}
@@ -132,7 +133,7 @@ export const ProductDetail: React.FC<Props> = ({ id }) => {
                             </div>
                         </div>
 
-                        <div className="border-t mt-6 pt-6">
+                        {/* <div className="border-t mt-6 pt-6">
                             <h2 className="font-semibold mb-4">Sales Details</h2>
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
@@ -144,7 +145,7 @@ export const ProductDetail: React.FC<Props> = ({ id }) => {
                                     <p className="font-medium">{5087}</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
 
                         {/* <div className="mt-6">
     <h3 className="font-semibold text-lg mb-4 text-gray-800">Last 10 day Prices</h3>
