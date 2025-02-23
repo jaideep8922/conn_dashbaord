@@ -32,7 +32,7 @@ export default function LoginForm() {
         // Save token and user data in localStorage
         localStorage.setItem("token", response.data.data.token); 
         localStorage.setItem("user", JSON.stringify(response.data.data.user)); 
-        router.replace("/"); 
+        router.replace("/product-management"); 
 
         if (response.data.data.token) {
           Cookies.set('token', response.data.data.token, { expires: 7 });
