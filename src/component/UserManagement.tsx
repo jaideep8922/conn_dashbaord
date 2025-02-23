@@ -272,19 +272,17 @@ export default function UsersPage() {
         
         // onClick={() => router.push('/location')}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
-            <path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z" />
-          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-locate-fixed"><line x1="2" x2="5" y1="12" y2="12"/><line x1="19" x2="22" y1="12" y2="12"/><line x1="12" x2="12" y1="2" y2="5"/><line x1="12" x2="12" y1="19" y2="22"/><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="3"/></svg>
           Location
         </button>
-        <button className="flex items-center gap-2 px-4 py-2 border rounded-lg hover:bg-gray-50"
+        {/* <button className="flex items-center gap-2 px-4 py-2 border rounded-lg hover:bg-gray-50"
         //  onClick={() => router.push('/industry')}
          >
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
             <path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z" />
           </svg>
           Industry
-        </button>
+        </button> */}
         <button className="ml-auto flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700" 
         onClick={() => router.push('/add-user')}
         >
