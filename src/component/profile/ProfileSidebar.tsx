@@ -4,6 +4,7 @@ import Image from 'next/image'
 import File from '../../assets/profile_user.jpg'
 import { LineChart } from '../chart/line-chart'
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
 
 
 const handleRedirect = (category:string) => {
@@ -23,7 +24,6 @@ export const ProfileSidebar: React.FC<Props> = ({ id }) => {
 
     const [loading, setLoading] = useState<boolean>(true);
 
-    console.log("iddddddd", id)
 
 
     useEffect(() => {
@@ -49,7 +49,7 @@ export const ProfileSidebar: React.FC<Props> = ({ id }) => {
     }, [id]);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div className='m-5'>Loading...</div>;
     }
 
     if (!user) {
@@ -67,8 +67,18 @@ export const ProfileSidebar: React.FC<Props> = ({ id }) => {
     ];
 
     return (
-        <div className="grid">
+        <div className="grid mx-5 mt-2">
             {/* Main Content */}
+            <Link
+            href="#"
+            onClick={(e) => {
+              e.preventDefault()
+              history.back()
+            }}
+            className="flex items-center my-4 text-sm text-gray-600 hover:text-gray-900"
+          >
+            ← Back
+          </Link>
 
             {user?.customId?.includes("SU") ? (
                 <div className="grid">
@@ -84,7 +94,7 @@ export const ProfileSidebar: React.FC<Props> = ({ id }) => {
                                             alt="Profile Picture"
                                             width={80}
                                             height={80}
-                                            className="rounded-full"
+                                            className="rounded-full h-20"
                                         />
                                     ) : (
                                         <Image
@@ -92,7 +102,7 @@ export const ProfileSidebar: React.FC<Props> = ({ id }) => {
                                             alt="Profile Picture"
                                             width={80}
                                             height={80}
-                                            className="rounded-full"
+                                            className="rounded-full h-20"
                                         />
                                     )}
 
@@ -142,11 +152,11 @@ export const ProfileSidebar: React.FC<Props> = ({ id }) => {
                                     >
                                         <h3 className="text-2xl font-bold">{stat.value}</h3>
                                         <p className="text-sm text-gray-600">{stat.title}</p>
-                                        <button className="text-blue-600 text-sm mt-2"
+                                        {/* <button className="text-blue-600 text-sm mt-2"
                                             // onClick={() => window.location.href = '/product-details'}
 
                                             // onClick={() => handleRedirect(stat.title)}
-                                        >View</button>
+                                        >View</button> */}
                                     </div>
                                 ))}
                             </div>
@@ -162,14 +172,14 @@ export const ProfileSidebar: React.FC<Props> = ({ id }) => {
                             <div className="bg-white p-6 rounded-lg shadow mt-4 border">
                                 <div className="flex justify-between items-center mb-4">
                                     <h3 className="text-lg font-semibold">Connected Retailers</h3>
-                                    <div className="flex gap-2">
+                                    {/* <div className="flex gap-2">
                                         <input
                                             type="search"
                                             placeholder="Search..."
                                             className="border rounded px-3 py-1 text-sm"
                                         />
                                         <button className="bg-gray-200 px-4 py-1 rounded">Export</button>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <table className="w-full text-sm">
                                     <thead>
@@ -219,7 +229,7 @@ export const ProfileSidebar: React.FC<Props> = ({ id }) => {
                                             alt="Profile Picture"
                                             width={80}
                                             height={80}
-                                            className="rounded-full"
+                                            className="rounded-full h-20"
                                         />
                                     ) : (
                                         <Image
@@ -227,7 +237,7 @@ export const ProfileSidebar: React.FC<Props> = ({ id }) => {
                                             alt="Profile Picture"
                                             width={80}
                                             height={80}
-                                            className="rounded-full"
+                                            className="rounded-full h-20"
                                         />
                                     )}
 

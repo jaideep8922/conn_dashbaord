@@ -211,11 +211,6 @@ export default function ProductManagement() {
                         </div>
                     )}
 
-
-
-
-
-
                 </div>
 
                 <div className="flex gap-2 justify-center items-center">
@@ -244,13 +239,13 @@ export default function ProductManagement() {
                             <tr key={product.id} className="hover:bg-gray-50">
                                 <td className="px-6 py-4 whitespace-nowrap">
                                     <div className="flex items-center">
-                                        <div className="h-5 w-10 flex-shrink-0 rounded-full">
+                                        <div className=" w-10 flex-shrink-0 rounded-full">
                                             <img
                                                 src={product?.productImage}
                                                 alt={product.productName}
                                                 width={40}
                                                 height={40}
-                                                className="rounded-full"
+                                                className="rounded-full h-10 border"
                                             />
                                         </div>
                                         <div className="ml-4">
@@ -260,16 +255,16 @@ export default function ProductManagement() {
                                     </div>
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    {product.moq}
+                                    {product.moq || "no data"}
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    ₹ {product.highPrice}
+                                    ₹ {product.highPrice || "no price"}
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    ₹ {product.averagePrice}
+                                    ₹ {product.averagePrice || "no price"}
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                    ₹ {product.goodPrice}
+                                    ₹ {product.goodPrice || "no price"}
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap text-sm cursor-pointer text-blue-500" onClick={() => router.push(`/product-management/${product.productId}`)}> View
                                 </td>
